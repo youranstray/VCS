@@ -32,7 +32,7 @@ define(['backbone'], function (Backbone) {
 			var comment = attrs.comment; //备注
 
 			if (caseName !== undefined){
-				if (!caseName && !caseName.trim()){
+				if (!caseName || !caseName.trim()){
 					return '预案名称为必填项';
 				}else if (caseName.length > 32){
 					return '预案名称最大长度为32个字符';
@@ -40,7 +40,7 @@ define(['backbone'], function (Backbone) {
 			}
 
 			if (chairMan !== undefined) {
-				if(!chairMan && !chairMan.trim()){
+				if(!chairMan || !chairMan.trim()){
 					return '调度席为必选项';
 				}
 			}

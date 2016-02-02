@@ -30,16 +30,16 @@ define(['backbone'], function (Backbone) {
 			var columnNum = attrs.columnNum;
 			var unitId = attrs.unitId;
 
-			if (templateName !== undefined) {
-				if (!templateName && !templateName.trim()) {
+			//if (templateName !== undefined) {
+				if (!templateName || !templateName.trim()) {
 					return '模板名称为必填项';
 				}else if (templateName.length > 32) {
 					return '模板名称最大长度为32个字符';
 				}
-			}
+			//}
 
-			if (rowNum !== undefined) {
-				if (!rowNum && !rowNum.trim()) {
+			//if (rowNum !== undefined) {
+				if (!rowNum || !rowNum.trim()) {
 					return '行数为必填项';
 				}else if (parseInt(rowNum)  > 6){
 					return '行数最大为6';
@@ -48,10 +48,10 @@ define(['backbone'], function (Backbone) {
 				}else if (!/^\d\d$/.test(rowNum)) {
 					return '行数只能为数字';
 				}
-			}
+			//}
 
-			if (columnNum !== undefined) {
-				if (!columnNum && !columnNum.trim()) {
+			//if (columnNum !== undefined) {
+				if (!columnNum || !columnNum.trim()) {
 					return '列数为必填项';
 				}else if (parseInt(columnNum)  > 6){
 					return '列数最大为6';
@@ -60,7 +60,7 @@ define(['backbone'], function (Backbone) {
 				}else if (!/^\d\d$/.test(columnNum)) {
 					return '列数只能为数字';
 				}
-			}
+			//}
 		}
 	});
 	return App.Models.ChannelTemplate;

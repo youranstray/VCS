@@ -1,0 +1,11 @@
+<div class="modal-header">
+  <button type="button" class="close" data-dismiss="modal" data-type="cancel" aria-hidden="true">×</button>
+  <div class="modal-title"><%=title%></div>
+</div>
+<div class="modal-body">
+  <p><%=text%></p>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn button" data-type="ok" data-dismiss="modal"><%=OkBtnText%></button>
+  <%if(type !== 'alert'){%><button type="button" class="btn button" data-type="cancel" data-dismiss="modal"><%=CancelBtnText%></button><%}%>
+</div>

@@ -6,10 +6,18 @@
 define(['jquery','text!templates/message.html'], function ($,tpl) {
     var MessageBox = App.Widgets.MessageBox = function (options) {
         var me = this;
-        this.$el = $('#msgbox');
-		if(this.$el.length < 1){
-			this.$el = $('<div class="modal" id="msgbox"><div class="modal-dialog"><div class="modal-content"></div></div></div>').appendTo(document.body);
-		}
+        if(!options){
+        	this.$el = $('#msgbox');
+			if(this.$el.length < 1){
+				this.$el = $('<div class="modal" id="msgbox"><div class="modal-dialog"><div class="modal-content"></div></div></div>').appendTo(document.body);
+			}
+        }else{
+        	this.$el = $(options.id);
+        	if (this.$el.length < 1) {
+        		this.$el = $('<div class="modal" id="' + options.id + '"><div class="modal-dialog"><div class="modal-content"></div></div></div>').appendTo(document.body);
+        	}
+        }
+        
 		this.tpl = tpl;
         this.$el.on('click','button',function (e) {
 			switch($(e.target).attr('data-type')){
