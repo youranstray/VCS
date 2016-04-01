@@ -1,0 +1,18 @@
+//指挥调度
+define([
+	'backbone'
+	], 
+	function (Backbone) {
+	App.Views.CommandManager = Backbone.View.extend({
+		events: {
+
+		},
+		initialize: function (options) {
+
+		},
+		render: function () {
+
+		}
+	});
+	return App.Views.CommandManager;
+});

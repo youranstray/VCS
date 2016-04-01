@@ -1,0 +1,67 @@
+/*
+*author:liyouran
+*createtime:20160124
+*/
+define(['backbone'], function (Backbone) {
+	App.Models.ChannelTemplate = Backbone.Model.extend({
+		urlRoot: '',
+		default: {
+			id: null
+		},
+		parse: function (data, options) {
+			var record;
+			if (data.hasOwnProperty('success') && data.hasOwnProperty('msg')) {
+				if(data.success == false && !data.data){
+					record = this.attributes;
+				}else{
+					record = data.data;
+				}
+			}else{
+				record = data;
+			}
+			if (record) {
+
+			}
+			return record;
+		},
+		validate: function (attrs, options) {
+			var templateName = attrs.templateName;
+			var rowNum = attrs.rowNum;
+			var columnNum = attrs.columnNum;
+			var unitId = attrs.unitId;
+
+			//if (templateName !== undefined) {
+				if (!templateName || !templateName.trim()) {
+					return '模板名称为必填项';
+				}else if (templateName.length > 32) {
+					return '模板名称最大长度为32个字符';
+				}
+			//}
+
+			//if (rowNum !== undefined) {
+				if (!rowNum || !rowNum.trim()) {
+					return '行数为必填项';
+				}else if (parseInt(rowNum)  > 6){
+					return '行数最大为6';
+				}else if (parseInt(rowNum)  < 1) {
+					return '行数最小为1';
+				}else if (!/^\d\d$/.test(rowNum)) {
+					return '行数只能为数字';
+				}
+			//}
+
+			//if (columnNum !== undefined) {
+				if (!columnNum || !columnNum.trim()) {
+					return '列数为必填项';
+				}else if (parseInt(columnNum)  > 6){
+					return '列数最大为6';
+				}else if (parseInt(columnNum)  < 1) {
+					return '列数最小为1';
+				}else if (!/^\d\d$/.test(columnNum)) {
+					return '列数只能为数字';
+				}
+			//}
+		}
+	});
+	return App.Models.ChannelTemplate;
+});

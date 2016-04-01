@@ -1,0 +1,8 @@
+<div class="content">
+	<%=topbar%>
+    <div class="dialogview"></div>
+    <div class="toolbar">
+        <button type="button" class="btn button cancel" data-dismiss="modal">取消</button>
+        <button type="button" class="btn button submit" data-dismiss="modal">确定</button>
+    </div>
+</div>

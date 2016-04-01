@@ -1,0 +1,101 @@
+define(['backbone'], function (Backbone) {
+	App.Routers.Router = Backbone.Router.extend({
+		routes:{
+			'*page': 'showPage' 
+		},
+		initialize: function () {
+			var router = this;
+			$('.nav-group').slimScroll({
+				//distance: '30px',
+				//height: '100%', 
+				//alwaysVisible: true
+			});
+			$('.nav-group').on('click', '.nav', function (e) {
+				var navPage = $(this).attr('data-navpage');
+				if(navPage){
+					router.navigate(navPage,{trigger: true});
+				}
+				if($(e.target).hasClass('nav-btn') || $(e.target).closest('.nav').hasClass('nav-btn')){
+					if($(this).hasClass('selected')){
+						$(this).toggleClass('selected');
+					}else{
+						$('.nav-group').find('.selected').removeClass('selected');
+						$(this).addClass('selected');
+					}
+				}
+			});
+			this.defaultPage = $('.nav-group').find('.nav').eq(0).attr('data-navpage');
+		},
+		showPage: function (page) { //切换路由
+			page = page || this.defaultPage;
+			var $page = $('.main.pages').find(page);
+			var curView = null;
+			var firstshow = false;
+			var me = this;
+			switch (page) {
+				case '.command-page': { //指挥调度
+					if(!this.commandView){
+						require(['views/commandManager'], function (View) {
+							me.commandView = new View({el: $page});
+						});
+						firstshow = true;
+					}
+					curView = this.commandView;
+					break;
+				}
+				case '.dBDispatch-page': { //控制到解码板卡
+					if(!this.dBDispatchView){
+						require(['views/dBDispatchManager'], function (View) {
+							me.dBDispatchView = new View({el: $page});
+						});
+						firstshow = true;
+					}
+					curView = this.dBDispatchView;
+					break;
+				}
+				case '.mDispatch-page': { //控制到矩阵
+					if(!this.mDispatchView){
+						require(['views/mDispatchManager'], function (View) {
+							me.mDispatchView = new View({el: $page});
+						});
+						firstshow = true;
+					}
+					curView = this.mDispatchView;
+					break;
+				}
+				/*case '.dBSet-page': { //解码板卡配置
+					if(!this.dBSetView){
+						require(['views/dBSetManager'], function (View) {
+							me.dBSetView = new View({el: $page});
+						});
+						firstshow = true;
+					}
+					curView = this.dBSetView;
+					break;
+				}*/
+				case '.mSet-page': { //矩阵配置
+					if(!this.mSetView){
+						require(['views/mSetManager'], function (View) {
+							me.mSetView = new View({el: $page});
+						});
+						firstshow = true;
+					}
+					curView = this.mSetView;
+					break;
+				}
+				case '.map-page': { //电子地图
+					if(!this.mapView){
+						require(['views/mapManager'], function (View) {
+							me.mapView = new View({el: $page});
+						});
+						firstshow = true;
+					}
+					curView = this.mapView;
+					break;
+				}
+			}
+		},
+
+	});
+	return App.Routers.Router;
+});

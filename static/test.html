@@ -6,18 +6,22 @@
 	<title></title>
 	<link rel="stylesheet" href="">
 	<style type="text/css" media="screen">
-		.item{
+		/*.item{
 			display: inline-block; width: 80px; height: 80px; margin: 10px; background: #CCC;
 		}
 		.parent1, .parent2{
 			width: 400px; height: 400px; margin: 10px; border: 1px solid #CCC;
-		}
+		}*/
 	</style>
 	<script type="text/javascript" src="js/libs/jQuery/jquery-1.9.0.min.js"></script>
 	<script type="text/javascript" src="js/libs/jquery-ui.min.js"></script>
 	<script type="text/javascript">
 		$(function () {
-			$('.item').draggable({
+			console.log($('svg'));
+			var svgParent = $('svg').parent();
+			$('svg').remove();
+			svgParent.append('<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" version="1.1"><path d="M153 334 C153 334 151 334 151 334 C151 339 153 344 156 344 C164 344 171 339 171 334 C171 322 164 314 156 314 C142 314 131 322 131 334 C131 350 142 364 156 364 C175 364 191 350 191 334 C191 311 175 294 156 294 C131 294 111 311 111 334 C111 361 131 384 156 384 C186 384 211 361 211 334 C211 300 186 274 156 274" style="fill:white;stroke:red;stroke-width:2"/></svg>');
+			/*$('.item').draggable({
 				drag: function () {
 
 				}
@@ -37,12 +41,12 @@
 					$(this).append(dragTarget);
 					$(this).find('.item').draggable({appendTo: ".parent2"});
 				}
-			});
+			});*/
 		});
 	</script>
 </head>
 <body>
-	<div class="parent1">
+	<!-- <div class="parent1">
 		<div class="item">11111</div>
 		<div class="item">22222</div>
 		<div class="item">33333</div>
@@ -50,6 +54,24 @@
 	</div>
 	<div class="parent2" style="">
 		
+	</div> -->
+
+	<!-- <svg width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg">
+		<circle cx="100" cy="50" r="40" stroke="black" stroke-width="2" fill="red"/>
+		<rect width="300" height="100" style="fill:rgb(0,0,255);stroke-width:1; stroke:rgb(0,0,0)"/>
+		<path d="M153 334 C153 334 151 334 151 334 C151 339 153 344 156 344 C164 344 171 339 171 334 C171 322 164 314 156 314 C142 314 131 322 131 334 C131 350 142 364 156 364 C175 364 191 350 191 334 C191 311 175 294 156 294 C131 294 111 311 111 334 C111 361 131 384 156 384 C186 384 211 361 211 334 C211 300 186 274 156 274" style="fill:white;stroke:red;stroke-width:2"/>
+	</svg> -->
+
+	<!-- <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" version="1.1">
+		<path d="M153 334 C153 334 151 334 151 334 C151 339 153 344 156 344 C164 344 171 339 171 334 C171 322 164 314 156 314 C142 314 131 322 131 334 C131 350 142 364 156 364 C175 364 191 350 191 334 C191 311 175 294 156 294 C131 294 111 311 111 334 C111 361 131 384 156 384 C186 384 211 361 211 334 C211 300 186 274 156 274" style="fill:white;stroke:red;stroke-width:2"/>
+	</svg> -->
+
+	<div class="item" style="position: relative; width: 100%; background: #CCC;">
+		<div class="ocx" style="position: relative; width: 500px; height: 480px; margin: 0 auto;">
+			<object id="plugin0" codebase="static/kplayer_x86.cab#version=2,1,1,483" type="application/x-kdvstreamplayer" width="100%" height="480" title="undefined" style="z-index: 1"><param name="url" id="file-href" value="rtsp://172.16.222.41/asffile/201601_0704_0649K/201601_0704_0649K.asf"><param name="autoplay" value="true"><param name="version" value="2,1,1,483"><param name="onupdate" value="upgradekplayer"></object>
+		</div>
+		<p style="position: absolute; top: 180px; left: 400px; width: 500px; color: red; font-size: 20px; z-index:99999999;">testtesttesttesttesttest</p>
 	</div>
+
 </body>
 </html>

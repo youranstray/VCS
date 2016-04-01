@@ -6,68 +6,67 @@
 	<title>VCS2.0</title>
 	<link rel="stylesheet" href="css/vcs.css" type="text/css">
 	<script type="text/javascript">
-		var RESOUCE_STATIC_URL = '.'//'${RESOUCE_STATIC_URL}';
+		var RESOUCE_STATIC_URL = '/VCS/static'//'${RESOUCE_STATIC_URL}';
 	</script>
 	<script type="text/javascript" data-main="js/apps/app.js" src="js/libs/require.js"></script>
 </head>
 <body>
+	<div class="header">
+		<div class="logo-icon"><img src="img/logo.png" alt=""></div>
+		<div class="title">VCS2.0可视化指挥调度系统</div>
+		<div class="sysMenu">
+			<div class="log-out"></div>
+			<div class="sys-setting"></div>
+			<div class="cur-user"></div>
+		</div>
+	</div>
 	<div class="container">
-		<!-- <form action="" class="form">
-			<div class="full-row">
-				<div class="x-label">父级：</div>
-				<div class="field">
-					<select tabindex="1" class="dropmenu parent form-control" name="parent.id" data-url="" data-valueproperty="id" data-displayproperty="name">
-					</select>
-				</div>
+		<div class="nav-group">
+			<div class="command nav nav-btn" data-navpage=".command-page">
+				<span class="nav-item">指挥调度</span>
 			</div>
-		
-			<div class="full-row">
-				<div class="x-label">子级：</div>
-				<div class="field">
-					<select tabindex="1" class="dropmenu children form-control" name="child.id" data-url="" data-valueproperty="id" data-displayproperty="name">
-					</select>
-				</div>
-			</div>
-		
-			<div class="toolbar">
-				<button type="button" class="btn button submit">确定</button>
-				<button type="button" class="btn button cancel" data-dismiss="modal">取消</button>
-			</div>
-		</form> -->
 
-		<br>
+			<div class="bigScreen nav nav-btn">
+				<span class="nav-item">大屏调度</span>
+				<ul class="bigScreen">
+					<li class="dBDispatch nav" data-navpage=".dBDispatch-page">解码板卡</li>
+					<li class="mDispatch nav" data-navpage=".mDispatch-page">矩阵</li>
+				</ul>
+			</div>
+			
 
-		<div class="resource-pool">
-			<div class="mt-resource"></div>
-			<div class="mt-resource"></div>
-			<div class="mt-resource"></div>
-			<div class="mt-resource"></div>
-			<div class="mt-resource"></div>
-			<div class="mt-resource"></div>
-			<div class="mt-resource"></div>
-			<div class="mt-resource"></div>
-			<div class="mt-resource"></div>
-			<div class="mt-resource"></div>
+			<div class="resource nav nav-btn">
+				<span class="nav-item">资源配置</span>
+				<ul class="resource">
+					<!-- <li class=" nav" data-navpage=".dBSet-page">解码板卡</li> -->
+					<li class="mSet nav" data-navpage=".mSet-page">矩阵</li>
+				</ul>
+			</div>
+			
+
+			<div class="map nav nav-btn" data-navpage=".map-page">
+				<span class="nav-item">电子地图</span>
+			</div>
 		</div>
-
-		<div class="big-screen">
-			<div class="window"></div>
-			<div class="window"></div>
-			<div class="window"></div>
-			<div class="window"></div>
-			<div class="window"></div>
-			<div class="window"></div>
-			<div class="window"></div>
-			<div class="window"></div>
-			<div class="window"></div>
-			<div class="window"></div>
-			<div class="window"></div>
-			<div class="window"></div>
-			<div class="window"></div>
-			<div class="window"></div>
-			<div class="window"></div>
-			<div class="window"></div>
+		<div class="main pages">
+			<div class="command-page page">
+				<div class="content"></div>
+				<div class="mpform"></div>
+			</div>
+			<div class="dBDispatch-page page">
+				<div class="content"></div>
+			</div>
+			<div class="mDispatch-page page">
+				<div class="content"></div>
+			</div>
+			<div class="mSet-page page">
+				<div class="content"></div>
+			</div>
+			<div class="map-page page">
+				<div class="content"></div>
+			</div>
 		</div>
+		<div style="clear: both;"></div>
 	</div>
 </body>
 </html>

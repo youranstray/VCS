@@ -1,0 +1,41 @@
+//指挥调度
+define([
+	'backbone',
+	'models/meetingPrecase',
+	'collections/meetingPrecases',
+	], 
+	function (Backbone, MeetingPrecase, MeetingPrecases) {
+	App.Views.CommandManager = Backbone.View.extend({
+		events: {
+			'click .search': 'precaseSearch',
+			'click .addnew': 'precaseAddnew',
+			'click .delete': 'precaseDelete',
+			'click .status': 'getPrecaseList',
+
+		},
+		initialize: function (options) {
+			_.bindAll(this, 'render', 'precaseSearch', 'precaseAddnew', 'precaseDelete', 'getPrecaseList');
+			this.collection = new MeetingPrecases(); //预案集合
+			this.render();
+		},
+		render: function () {
+
+		},
+		precaseSearch: function (e) { //预案搜索
+
+		},
+		precaseAddnew: function (e) { //新建预案
+			var attrs;
+			var model = new MeetingPrecase(attrs, {collection: this.collection});
+			Utils.animateSwitch($('.test1'), $('.test2'));
+		},
+		precaseDelete: function (e) { //删除预案
+
+		},
+		getPrecaseList: function (e) { //获取预案列表
+
+		},
+		
+	});
+	return App.Views.CommandManager;
+});
