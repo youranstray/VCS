@@ -1,0 +1,42 @@
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+    <title>vcsDemo</title> 
+    <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    Bootstrap
+    <link rel="stylesheet" href="http://cdn.bootcss.com/twitter-bootstrap/3.0.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="http://v3.bootcss.com/examples/signin/signin.css"/>
+    <script src="http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/twitter-bootstrap/3.0.3/js/bootstrap.min.js"></script> 
+  </head>
+  <body>
+  <div  class="container">
+      <form class="form-signin" role="form" action="vcs/login">
+        <h2 class="form-signin-heading">登陆</h2>
+        <input type="text" name="username" class="form-control" placeholder="请输入用户名" required autofocus>
+  
+        <button class="btn btn-lg btn-primary btn-block" type="submit">登陆</button>
+      </form>
+   
+  </body>
+</html> -->
+
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <%@ include file="resource.jsp"%>
+
+  <title></title>
+  <link rel="stylesheet" href="">
+  <script type="text/javascript">
+    var RESOUCE_STATIC_URL = '${RESOUCE_STATIC_URL}';
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
