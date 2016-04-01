@@ -85,7 +85,7 @@ body{
 .log-out{
   float: right;
   margin-top: 24px;
-  background-position: left;
+  background-position: left center;
   height: 20px;
   font-size: 12px;
 }
