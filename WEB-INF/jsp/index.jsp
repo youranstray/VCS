@@ -28,9 +28,30 @@
 		<div class="logo-icon"><img src="img/logo.png" alt=""></div>
 		<div class="title">VCS2.0可视化指挥调度系统</div>
 		<div class="sysMenu">
-			<div class="log-out"></div>
-			<div class="sys-setting"></div>
-			<div class="cur-user"></div>
+			<div class="log-out">
+				<span>注销</span>
+
+			</div>
+			<div class="sys-setting">
+		        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+		        	<span>设置</span>
+		        </a>
+		        <ul class="dropdown-menu">
+		        	<!-- <li class="cur-myinfo"><a href="#">个人信息</a></li>
+		        	<li class="modify_password"><a href="#">修改密码</a></li> -->
+		        </ul>
+			</div>
+			<div class="cur-user">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+		        	<span title="administrator">administrator</span>
+		        	<span class="drop-icon"></span>
+		        </a>
+		        <ul class="dropdown-menu">
+		        	<!-- <li class="cur-myinfo"><a href="#">个人信息</a></li>
+		        	<li class="modify_password"><a href="#">修改密码</a></li> -->
+		        </ul>
+			</div>
+			<div style="clear: both;"></div>
 		</div>
 	</div>
 	<div class="container">

@@ -13,11 +13,12 @@ html, body {
 }
 
 a{
-	color: #000000;
+  color: #66caee;
 }
+
 a:hover,
 a:focus{
-	color: #FFFFFF;
+  color: #66caee;
 	text-decoration: none;
 }
 
@@ -43,7 +44,7 @@ body{
   font-weight: bold;
   color: #ffffff;
   background: url(../img/bg.png) no-repeat;
-  background-position: left top;
+  background-position: center top;
 }
 
 /* header */
@@ -67,27 +68,86 @@ body{
   font-family: "Microsoft Yahei";
   font-size: 18px;
 }
-
-.cur-user{
-  width: 200px;
+/*system menu*/
+.sysMenu{
+  position: absolute;
+  top: 24px;
+  right: 0;
+  cursor: pointer;
+}
+.sysMenu .cur-user{
+  width: 109px;
   background: url(../img/curuser.png) no-repeat;
 }
-.sys-setting{
-  width: 180px;
+.sysMenu .cur-user span:first-child{
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  margin-left: 4px;
+  overflow: hidden;
+  white-space: nowrap;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+}
+.sysMenu .sys-setting{
+  width: 90px;
+  margin-left: 11px;
   background: url(../img/syssetting.png) no-repeat;
 }
-.log-out{
-  width: 100px;
+.sysMenu .log-out{
+  width: 72px;
+  margin-left: 11px;
   background: url(../img/logout.png) no-repeat;
 }
-.cur-user,
-.sys-setting,
-.log-out{
+.sysMenu .sys-setting span:first-child,
+.sysMenu .log-out span:first-child{
+  position: relative;
+  display: inline-block;
+  width: 38px;
+  margin-left: 4px;
+}
+
+
+.sysMenu .cur-user,
+.sysMenu .sys-setting,
+.sysMenu .log-out{
+  position: relative;
   float: right;
-  margin-top: 24px;
-  background-position: left center;
   height: 20px;
+  padding-left: 24px;
   font-size: 12px;
+  line-height: 20px;
+  color: #66caee;
+  background-position: left center;
+}
+.sysMenu .cur-user:after,
+.sysMenu .sys-setting:after{
+  position: absolute;
+  top: -2px;
+  width: 14px;
+  height: 24px;
+  content: " ";
+  background: url(../img/slash.png) no-repeat;
+}
+.sysMenu .cur-user:after{
+  left: 99px;
+}
+.sysMenu .sys-setting:after{
+  left: 72px;
+}
+.sysMenu .drop-icon{
+  position: absolute;
+  content: " ";
+  width: 14px;
+  height: 24px;
+  background: url(../img/arrow-down.png) no-repeat;
+  background-position: center right;
+}
+.sysMenu .cur-user .drop-icon{
+  left: 85px;
+}
+.sysMenu .sys-setting .drop-icon{
+  left: 52px;
 }
 
 /* container */
