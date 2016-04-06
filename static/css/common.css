@@ -135,7 +135,7 @@ body{
 .sysMenu .sys-setting:after{
   left: 72px;
 }
-.sysMenu .drop-icon{
+.drop-icon{
   position: absolute;
   content: " ";
   width: 14px;
@@ -162,6 +162,7 @@ body{
 
 /* nav-group */
 .nav-group{
+  position: relative;
   float: left;
   width: 138px;
   height: 100%;
@@ -171,18 +172,80 @@ body{
 .nav{
   cursor: pointer;
 }
+.nav-btn{
+  position: relative;
+  width: 124px;
+  min-height: 48px;
+  margin-top: 7px;
+  margin-left: 7px;
+  padding-top: 12px;
+  color: #a0b5c5;
+  background: url(../img/navbtnbg.png) no-repeat;
+}
+.nav-btn:first-child{
+  margin-top: 9px;
+}
+.nav-btn.selected{
+  color: #ffffff;
+  background: url(../img/navbtn-select.png) no-repeat;
+}
 .nav-btn ul{
   display: none;
 }
-.nav-btn.selected ul{
+/* .nav-btn.selected ul{
   display: block;
+} */
+.index .nav-item{
+  background: url(../img/index-icon.png) no-repeat;
+  background-position: left center; 
 }
-.page{
-  width: 100%;
-  height: 100%;
-  display: none;
+.selected.index .nav-item{
+  background: url(../img/index-select.png) no-repeat;
+  background-position: left center;
 }
-
+.command .nav-item{
+  background: url(../img/command-icon.png) no-repeat;
+  background-position: left center;
+}
+.selected.command .nav-item{
+  background: url(../img/command-select.png) no-repeat;
+  background-position: left center;
+}
+.bigScreen .nav-item{
+  background: url(../img/bigScreen-icon.png) no-repeat;
+  background-position: left center;
+}
+.selected.bigScreen .nav-item{
+  background: url(../img/bigScreen-select.png) no-repeat;
+  background-position: left center;
+}
+.resource .nav-item{
+  background: url(../img/resource-icon.png) no-repeat;
+  background-position: left center;
+}
+.selected.resource .nav-item{
+  background: url(../img/resource-select.png) no-repeat;
+  background-position: left center;
+}
+.map .nav-item{
+  background: url(../img/map-icon.png) no-repeat;
+  background-position: left center;
+}
+.selected.map .nav-item{
+  background: url(../img/map-select.png) no-repeat;
+  background-position: left center;
+}
+.nav-item{
+  position: relative;
+  min-height: 20px;
+  line-height: 20px;
+  margin-left: 12px;
+  padding-left: 28px;
+}
+.nav-btn .drop-icon{
+  background: url(../img/navdrop-icon.png) no-repeat;
+  background-position: center;
+}
 /* main pages */
 .main.pages{
   position: relative;
@@ -190,6 +253,11 @@ body{
   height: 100%;
   margin-top: 2px;
   padding-left: 138px;
+}
+.page{
+  width: 100%;
+  height: 100%;
+  display: none;
 }
 
 /* content */

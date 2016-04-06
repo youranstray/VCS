@@ -3,7 +3,7 @@ define([
 	'backbone'
 	], 
 	function (Backbone) {
-	App.Views.DBDispatchManager = Backbone.View.extend({
+	App.Views.BigScreenManager = Backbone.View.extend({
 		events: {
 
 		},
@@ -14,5 +14,5 @@ define([
 			
 		}
 	});
-	return App.Views.DBDispatchManager;
+	return App.Views.BigScreenManager;
 });

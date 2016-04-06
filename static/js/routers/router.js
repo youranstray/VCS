@@ -12,18 +12,33 @@ define(['backbone'], function (Backbone) {
 				alwaysVisible: true
 			});
 			$('.nav-group').on('click', '.nav', function (e) {
+				e = e || window.event;
+				
 				var navPage = $(this).attr('data-navpage');
+
+				if($(e.target).hasClass('nav-btn') || $(e.target).closest('.nav').hasClass('nav-btn')){
+					if(!$(this).hasClass('selected') && $(this).attr('data-navpage')){
+						$('.nav-group').find('.selected').removeClass('selected');
+						$(this).addClass('selected');
+					}else if($(this).find('.drop-icon')){
+						$('.nav-group').find('.showSecondary').removeClass('showSecondary');
+						$(this).find('ul').addClass('.showSecondary').show();
+					}
+				}
+				/*debugger
+				if($(e.target).find('.drop-icon') || $(e.target).closest('.nav').find('.drop-icon')){
+					$('.nav-group').find('.showSecondary').removeClass('showSecondary');
+					$(this).find('ul').addClass('.showSecondary').show();
+				}else if(!$(this).hasClass('selected')){
+					$('.nav-group').find('.selected').removeClass('selected');
+					$(this).addClass('selected');
+				}*/
+
 				if(navPage){
 					router.navigate(navPage,{trigger: true});
 				}
-				if($(e.target).hasClass('nav-btn') || $(e.target).closest('.nav').hasClass('nav-btn')){
-					if($(this).hasClass('selected')){
-						$(this).toggleClass('selected');
-					}else{
-						$('.nav-group').find('.selected').removeClass('selected');
-						$(this).addClass('selected');
-					}
-				}
+				e.stopPropagation();
+				e.preventDefault();
 			});
 			this.defaultPage = $('.nav-group').find('.nav').eq(0).attr('data-navpage');
 		},
@@ -33,6 +48,7 @@ define(['backbone'], function (Backbone) {
 			var curView = null;
 			var firstshow = false;
 			var me = this;
+			$('.nav-group').find('div[data-navpage="'+ page +'"]').eq(0).addClass('selected');
 			switch (page) {
 				case '.command-page': { //指挥调度
 					if(!this.commandView){
@@ -44,24 +60,14 @@ define(['backbone'], function (Backbone) {
 					curView = this.commandView;
 					break;
 				}
-				case '.dBDispatch-page': { //控制到解码板卡
+				case '.bigScreen-page': { //控制到解码板卡
 					if(!this.dBDispatchView){
-						require(['views/dBDispatchManager'], function (View) {
-							me.dBDispatchView = new View({el: $page});
+						require(['views/bigScreenManager'], function (View) {
+							me.bigScreenView = new View({el: $page});
 						});
 						firstshow = true;
 					}
-					curView = this.dBDispatchView;
-					break;
-				}
-				case '.mDispatch-page': { //控制到矩阵
-					if(!this.mDispatchView){
-						require(['views/mDispatchManager'], function (View) {
-							me.mDispatchView = new View({el: $page});
-						});
-						firstshow = true;
-					}
-					curView = this.mDispatchView;
+					curView = this.bigScreenView;
 					break;
 				}
 				/*case '.dBSet-page': { //解码板卡配置
