@@ -43,7 +43,7 @@ body{
   font-size: 14px;
   font-weight: bold;
   color: #ffffff;
-  background: url(../img/bg.png) no-repeat;
+  background: url(../img/command/bg.png) no-repeat;
   background-position: center top;
 }
 
@@ -54,7 +54,7 @@ body{
   left: 0;
   width: 100%;
   height: 278px;
-  background: url(../img/topbg.png) no-repeat;
+  background: url(../img/command/topbg.png) no-repeat;
 }
 .logo-icon{
   position: absolute;
@@ -77,7 +77,7 @@ body{
 }
 .sysMenu .cur-user{
   width: 109px;
-  background: url(../img/curuser.png) no-repeat;
+  background: url(../img/command/curuser.png) no-repeat;
 }
 .sysMenu .cur-user span:first-child{
   position: relative;
@@ -92,12 +92,12 @@ body{
 .sysMenu .sys-setting{
   width: 90px;
   margin-left: 11px;
-  background: url(../img/syssetting.png) no-repeat;
+  background: url(../img/command/syssetting.png) no-repeat;
 }
 .sysMenu .log-out{
   width: 72px;
   margin-left: 11px;
-  background: url(../img/logout.png) no-repeat;
+  background: url(../img/command/logout.png) no-repeat;
 }
 .sysMenu .sys-setting span:first-child,
 .sysMenu .log-out span:first-child{
@@ -127,7 +127,7 @@ body{
   width: 14px;
   height: 24px;
   content: " ";
-  background: url(../img/slash.png) no-repeat;
+  background: url(../img/command/slash.png) no-repeat;
 }
 .sysMenu .cur-user:after{
   left: 99px;
@@ -140,7 +140,7 @@ body{
   content: " ";
   width: 14px;
   height: 24px;
-  background: url(../img/arrow-down.png) no-repeat;
+  background: url(../img/command/arrow-down.png) no-repeat;
   background-position: center right;
 }
 .sysMenu .cur-user .drop-icon{
@@ -167,7 +167,7 @@ body{
   width: 138px;
   height: 100%;
   min-height: 656px;
-  background: url(../img/navbg.png) no-repeat;
+  background: url(../img/command/navbg.png) no-repeat;
 }
 .nav{
   cursor: pointer;
@@ -180,14 +180,14 @@ body{
   margin-left: 7px;
   padding-top: 12px;
   color: #a0b5c5;
-  background: url(../img/navbtnbg.png) no-repeat;
+  background: url(../img/command/navbtnbg.png) no-repeat;
 }
 .nav-btn:first-child{
   margin-top: 9px;
 }
 .nav-btn.selected{
   color: #ffffff;
-  background: url(../img/navbtn-select.png) no-repeat;
+  background: url(../img/command/navbtn-select.png) no-repeat;
 }
 .nav-btn ul{
   display: none;
@@ -196,43 +196,43 @@ body{
   display: block;
 } */
 .index .nav-item{
-  background: url(../img/index-icon.png) no-repeat;
+  background: url(../img/command/index-icon.png) no-repeat;
   background-position: left center; 
 }
 .selected.index .nav-item{
-  background: url(../img/index-select.png) no-repeat;
+  background: url(../img/command/index-select.png) no-repeat;
   background-position: left center;
 }
 .command .nav-item{
-  background: url(../img/command-icon.png) no-repeat;
+  background: url(../img/command/command-icon.png) no-repeat;
   background-position: left center;
 }
 .selected.command .nav-item{
-  background: url(../img/command-select.png) no-repeat;
+  background: url(../img/command/command-select.png) no-repeat;
   background-position: left center;
 }
 .bigScreen .nav-item{
-  background: url(../img/bigScreen-icon.png) no-repeat;
+  background: url(../img/command/bigScreen-icon.png) no-repeat;
   background-position: left center;
 }
 .selected.bigScreen .nav-item{
-  background: url(../img/bigScreen-select.png) no-repeat;
+  background: url(../img/command/bigScreen-select.png) no-repeat;
   background-position: left center;
 }
 .resource .nav-item{
-  background: url(../img/resource-icon.png) no-repeat;
+  background: url(../img/command/resource-icon.png) no-repeat;
   background-position: left center;
 }
 .selected.resource .nav-item{
-  background: url(../img/resource-select.png) no-repeat;
+  background: url(../img/command/resource-select.png) no-repeat;
   background-position: left center;
 }
 .map .nav-item{
-  background: url(../img/map-icon.png) no-repeat;
+  background: url(../img/command/map-icon.png) no-repeat;
   background-position: left center;
 }
 .selected.map .nav-item{
-  background: url(../img/map-select.png) no-repeat;
+  background: url(../img/command/map-select.png) no-repeat;
   background-position: left center;
 }
 .nav-item{
@@ -243,7 +243,7 @@ body{
   padding-left: 28px;
 }
 .nav-btn .drop-icon{
-  background: url(../img/navdrop-icon.png) no-repeat;
+  background: url(../img/command/navdrop-icon.png) no-repeat;
   background-position: center;
 }
 /* main pages */
@@ -252,7 +252,7 @@ body{
   width: 99%;
   height: 100%;
   margin-top: 2px;
-  padding-left: 138px;
+  padding-left: 148px;
 }
 .page{
   width: 100%;
@@ -265,8 +265,19 @@ body{
   position: relative;
   min-width: 1170px;
   min-height: 768px;
-  background: url(../img/contentbg.png) no-repeat;
+  padding-top: 47px;
+  background: url(../img/command/contentbg.png) no-repeat;
   background-position: top center;
+  background-size: 100% auto;
+}
+.content-title{
+  position: absolute;
+  width: 100%;
+  top: -33px;
+}
+.content-main{
+  position: relative;
+  width: 100%;
 }
 
 /*dropkick*/

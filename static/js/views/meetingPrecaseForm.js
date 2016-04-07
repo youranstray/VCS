@@ -41,8 +41,18 @@ define([
 			},
 			addMembers: function (e) { //添加调度员
 			},
+			deleteMembers: function (e) { //删除调度员
+			},
+			onTopmost: function (e) { //调度成员置顶
+			},
+			onBottommost: function (e) { //调度成员置底
+			},
+			onRise: function (e) { //提升
+			},
+			onDrop: function (e) { //下降
+			},
 			onSubmited: function (e) { //保存预案
-			}
+			},
 		});
 		
 		return App.Views.MeetingPrecaseForm;

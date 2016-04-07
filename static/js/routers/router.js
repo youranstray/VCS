@@ -19,26 +19,23 @@ define(['backbone'], function (Backbone) {
 				if($(e.target).hasClass('nav-btn') || $(e.target).closest('.nav').hasClass('nav-btn')){
 					if(!$(this).hasClass('selected') && $(this).attr('data-navpage')){
 						$('.nav-group').find('.selected').removeClass('selected');
+						$('.nav-group').find('.showSecondary').removeClass('showSecondary').hide();
 						$(this).addClass('selected');
 					}else if($(this).find('.drop-icon')){
 						$('.nav-group').find('.showSecondary').removeClass('showSecondary');
-						$(this).find('ul').addClass('.showSecondary').show();
+						$(this).find('ul').addClass('showSecondary').show();
 					}
+				}else{
+					console.log(this);
+					//debugger
 				}
-				/*debugger
-				if($(e.target).find('.drop-icon') || $(e.target).closest('.nav').find('.drop-icon')){
-					$('.nav-group').find('.showSecondary').removeClass('showSecondary');
-					$(this).find('ul').addClass('.showSecondary').show();
-				}else if(!$(this).hasClass('selected')){
-					$('.nav-group').find('.selected').removeClass('selected');
-					$(this).addClass('selected');
-				}*/
+				
 
 				if(navPage){
 					router.navigate(navPage,{trigger: true});
 				}
-				e.stopPropagation();
-				e.preventDefault();
+				e.stopPropagation(); //阻止冒泡
+				e.preventDefault(); //阻止事件默认行为
 			});
 			this.defaultPage = $('.nav-group').find('.nav').eq(0).attr('data-navpage');
 		},

@@ -27,6 +27,12 @@ define([
 			this.collection = new MeetingPrecases(); //预案集合
 			this.pagingBar = new PagingBar({el:this.$el.find('.pagingbar ul')}); //分页
 			//this.render();
+			this.$el.find('.content-main').slimScroll({
+				//distance: '30px',
+				width: '100%',
+				//height: '100%', 
+				alwaysVisible: true
+			});
 		},
 		render: function () {
 			var extraParam = {};

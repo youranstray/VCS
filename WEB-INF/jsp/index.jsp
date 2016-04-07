@@ -69,12 +69,8 @@
 			<%for(int i = 0; i < userRoles.length; i++){
 				if(userRoles[i].equals("dispatcher") || userName.equals("administrator")){%>
 
-				<div class="bigScreen nav nav-btn">
+				<div class="bigScreen nav nav-btn" data-navpage=".bigScreen-page">
 					<span class="nav-item">大屏调度</span>
-					<ul class="bigScreen">
-						<li class="dBDispatch nav" data-navpage=".dBDispatch-page">解码板卡</li>
-						<li class="mDispatch nav" data-navpage=".mDispatch-page">矩阵</li>
-					</ul>
 				</div>
 				<% break;
 				}
