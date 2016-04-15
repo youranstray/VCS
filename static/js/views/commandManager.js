@@ -30,7 +30,7 @@ define([
 			this.$el.find('.content-main').slimScroll({
 				//distance: '30px',
 				width: '100%',
-				//height: '100%', 
+				height: '100%', 
 				alwaysVisible: true
 			});
 		},

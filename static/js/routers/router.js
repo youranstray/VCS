@@ -57,7 +57,7 @@ define(['backbone'], function (Backbone) {
 					curView = this.commandView;
 					break;
 				}
-				case '.bigScreen-page': { //控制到解码板卡
+				case '.bigScreen-page': { //大屏调度
 					if(!this.dBDispatchView){
 						require(['views/bigScreenManager'], function (View) {
 							me.bigScreenView = new View({el: $page});
